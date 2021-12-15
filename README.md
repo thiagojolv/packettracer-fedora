@@ -1,6 +1,6 @@
 # Cisco Packet Tracer 8.1.0 on Fedora 35
 
-Install Cisco Packet Tracer 8.1.0 Easily on Fedora 35.
+Easily install Cisco Packet Tracer 8.1.0 on Fedora 35.
 
 Follow this steps to easily install:
 - Clone this repo to your system;

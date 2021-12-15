@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -e /opt/pt ]; then
   echo "Removing old version of Packet Tracer from /opt/pt"
   sudo rm -rf /opt/pt
@@ -13,6 +15,7 @@ if [ -e /opt/pt ]; then
   sudo rm -f /usr/local/bin/packettracer
 fi
 
+echo "Extracting files"
 ar -x CiscoPacketTracer_810_Ubuntu_64bit.deb
 tar -xvf control.tar.xz
 tar -xvf data.tar.xz
@@ -22,6 +25,7 @@ sudo cp -r usr /
 sudo cp -r opt /
 sudo ./postinst
 
+echo "Installing dependencies"
 sudo dnf install -y \
   qt5-qtmultimedia.x86_64 \
   qt5-qtwebengine.x86_64 \
