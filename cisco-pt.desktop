@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/opt/pt/packettracer --no-sandbox args
+Name=Packet Tracer 8.1
+Icon=/opt/pt/art/app.png
+Terminal=false
+StartupNotify=true
+MimeType=application/x-pkt;application/x-pka;application/x-pkz;application/x-pks;application/x-pksz;
+
