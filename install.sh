@@ -15,8 +15,12 @@ if [ -e /opt/pt ]; then
   sudo rm -f /usr/local/bin/packettracer
 fi
 
+# Find Cisco Packet Tracer installer
+path_to_pt=$(find /home -name CiscoPacketTracer*Ubuntu_64bit.deb)
+
 echo "Extracting files"
-ar -x CiscoPacketTracer_810_Ubuntu_64bit.deb
+mkdir packettracer && cd packettracer
+ar -x "$path_to_pt"
 tar -xvf control.tar.xz
 tar -xvf data.tar.xz
 
@@ -36,3 +40,5 @@ sudo dnf install -y \
   qt5-qtlocation.x86_64 \
   qt5-qtsvg.x86_64 \
   qt5-qtspeech
+
+cd .. && sudo rm -rf packettracer
