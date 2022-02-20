@@ -19,15 +19,15 @@ fi
 path_to_pt=$(find /home -name CiscoPacketTracer*Ubuntu_64bit.deb)
 
 echo "Extracting files"
-mkdir packettracer && cd packettracer
-ar -x "$path_to_pt"
-tar -xvf control.tar.xz
-tar -xvf data.tar.xz
+mkdir packettracer
+ar -x $path_to_pt --output=packettracer
+tar -xvf packettracer/control.tar.xz --directory=packettracer
+tar -xvf packettracer/data.tar.xz --directory=packettracer
 
-mv cisco-pt.desktop usr/share/applications/cisco-pt.desktop
-sudo cp -r usr /
-sudo cp -r opt /
-sudo ./postinst
+sudo cp -r packettracer/usr /
+sudo cp -r packettracer/opt /
+sudo cp --force cisco-pt.desktop /usr/share/applications/cisco-pt.desktop
+sudo ./packettracer/postinst
 
 echo "Installing dependencies"
 sudo dnf install -y \
@@ -41,4 +41,4 @@ sudo dnf install -y \
   qt5-qtsvg.x86_64 \
   qt5-qtspeech
 
-cd .. && sudo rm -rf packettracer
+sudo rm -rf packettracer
