@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Find Cisco Packet Tracer installer
+installer_name=CiscoPacketTracer*Ubuntu_64bit.deb
+path_to_pt=$(find /home -name $installer_name)
+
+if [[ -z "$path_to_pt" ]]; then
+    echo "Packet Tracer installer not found in /home. It must be named like this: $installer_name."
+    echo "You can download the installer from www.netacad.com/portal/node/488."
+    exit 1
+fi
+
 if [ -e /opt/pt ]; then
   echo "Removing old version of Packet Tracer from /opt/pt"
   sudo rm -rf /opt/pt
@@ -11,12 +21,9 @@ if [ -e /opt/pt ]; then
   sudo xdg-desktop-menu uninstall /usr/share/applications/cisco-ptsa.desktop
   sudo update-mime-database /usr/share/mime
   sudo gtk-update-icon-cache --force /usr/share/icons/gnome
-  
+
   sudo rm -f /usr/local/bin/packettracer
 fi
-
-# Find Cisco Packet Tracer installer
-path_to_pt=$(find /home -name CiscoPacketTracer*Ubuntu_64bit.deb)
 
 echo "Extracting files"
 mkdir packettracer
