@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Find Cisco Packet Tracer installer
-installer_name=CiscoPacketTracer*Ubuntu_64bit.deb
-path_to_pt=$(find /home -name $installer_name)
+installer_name_1=CiscoPacketTracer*Ubuntu_64bit.deb
+installer_name_2=Cisco_Packet_Tracer_*_Ubuntu_64bit_*.deb
+installer_name_3=Cisco*.deb
+path_to_pt=$(find /home -name $installer_name_1 -o -name $installer_name_2 -o -name $installer_name_3)
 
 if [[ -z "$path_to_pt" ]]; then
     echo "Packet Tracer installer not found in /home. It must be named like this: $installer_name."
