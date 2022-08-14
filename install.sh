@@ -35,7 +35,7 @@ tar -xvf packettracer/data.tar.xz --directory=packettracer
 
 sudo cp -r packettracer/usr /
 sudo cp -r packettracer/opt /
-sudo cp --force cisco-pt.desktop /usr/share/applications/cisco-pt.desktop
+sudo sed -i 's/packettracer/packettracer --no-sandbox args/' /usr/share/applications/cisco-pt.desktop
 sudo ./packettracer/postinst
 
 echo "Installing dependencies"
