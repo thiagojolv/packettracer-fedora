@@ -16,7 +16,7 @@ Follow these steps to easily install:
 -   Download the Packet Tracer installer from [Cisco's download page](https://www.netacad.com/portal/node/488) and save it in any directory on `/home` using the default filename.
 -   Clone this repo to your system
 -   `cd` into the cloned repo and make the install script executable: `chmod +x install.sh`
--   Run `sudo bash install.sh` and relax ;D
+-   Run `bash install.sh` **or** `sudo bash install.sh` and relax. If you not use `sudo`, you can receive no permission alerts when the script looks for installers on you HOME. Only ignore.
 
 ## Uninstall
 
