@@ -8,6 +8,7 @@ Easily install Cisco Packet Tracer latest version on Fedora. This installation s
 - 35
 - 36
 - 37
+- 38
 
 ## Install
 
