@@ -25,3 +25,6 @@ Follow these steps to easily install:
 -   Run `sudo bash uninstall.sh`
 
 _If you try this script in another Fedora release, please report any problem or success case._
+
+## Run
+-` Run the command "packettracer" on your termimal.
