@@ -27,6 +27,9 @@ fi
 echo "Removing old version of Packet Tracer from /opt/pt"
 sudo bash ./uninstall.sh
 
+echo "Installing dependencies"
+sudo dnf -y install binutils qt5-qt{multimedia,webengine,networkauth,websockets,webchannel,script,location,svg,speech}
+
 echo "Extracting files"
 mkdir packettracer
 ar -x $path_to_pt --output=packettracer
@@ -39,8 +42,5 @@ sudo sed -i 's/packettracer/packettracer --no-sandbox args/' /usr/share/applicat
 sudo sed -i 's/sudo xdg-mime/sudo -u $SUDO_USER xdg-mime/' ./packettracer/postinst 
 sudo sed -i 's/sudo gtk-update-icon-cache --force/sudo gtk-update-icon-cache -t --force/' ./packettracer/postinst
 sudo ./packettracer/postinst
-
-echo "Installing dependencies"
-sudo dnf -y install qt5-qt{multimedia,webengine,networkauth,websockets,webchannel,script,location,svg,speech}
 
 sudo rm -rf packettracer
