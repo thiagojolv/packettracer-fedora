@@ -9,8 +9,8 @@ Green="\033[0;32m"
 
 # Find Cisco Packet Tracer installer
 installer_name_1=CiscoPacketTracer*Ubuntu_64bit.deb
-installer_name_2=Cisco_Packet_Tracer_*_Ubuntu_64bit_*.deb
-installer_name_3=Cisco*.deb
+installer_name_2=Cisco_*.deb
+installer_name_3=Packet_Tracer*.deb
 localized_installers=()
 selected_installer=''
 
