@@ -11,6 +11,13 @@ Follow these steps to easily install:
 -   `cd` into the cloned repo and make the install script executable: `chmod +x install.sh`
 -   Run `bash install.sh` **or** `sudo bash install.sh` and relax. If you not use `sudo`, you can receive no permission alerts when the script looks for installers on you HOME. Only ignore.
 
+## Supported Fedora release
+
+- [x] Fedora 36
+- [x] Fedora 37
+- [x] Fedora 38
+- [x] Fedora 39
+
 ## Uninstall
 
 -   If you need to uninstall, make sure the uninstall script is executable: `chmod +x uninstall.sh`
