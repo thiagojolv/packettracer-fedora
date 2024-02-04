@@ -15,13 +15,13 @@ localized_installers=()
 selected_installer=''
 
 c=1
-for installer in $(find /home -type f -name $installer_name_1 -o -name $installer_name_2 -o -name $installer_name_3); do
+for installer in $(find /home/$user/Downloads -type f -name $installer_name_1 -o -name $installer_name_2 -o -name $installer_name_3); do
   echo $installer
   localized_installers[$c]=$installer
   ((c++))
 done
 if [[ -z "${localized_installers[@]}" ]]; then
-  echo -e "\n\n${Red}${Bold}Packet Tracer installer not found in /home. It must be named like this: $installer_name_1.$Color_Off\n"
+  echo -e "\n\n${Red}${Bold}Packet Tracer installer not found in /home/$user/Downloads. It must be named like this: $installer_name_1.$Color_Off\n"
   echo -e "You can download the installer from ${Cyan}https://www.netacad.com/portal/resources/packet-tracer${Color_Off} \
 or ${Cyan}https://skillsforall.com/resources/lab-downloads${Color_Off} (login required)."
   exit 1
