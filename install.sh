@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Variables
+user=$(whoami)
+
 # Text decoration
 Red="\033[0;31m"
 Bold="\033[1m"
