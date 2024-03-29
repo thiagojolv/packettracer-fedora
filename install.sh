@@ -13,7 +13,6 @@ selected_installer=''
 
 c=1
 for installer in $(find /home -type f -name "Cisco*Packet*.deb" -o -name "Packet*Tracer*.deb"); do
-  echo $installer
   localized_installers[$c]=$installer
   ((c++))
 done
