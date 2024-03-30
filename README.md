@@ -18,6 +18,9 @@ Follow these steps to easily install:
 - [x] Fedora 38
 - [x] Fedora 39
 
+## Supported other releases
+- [X] Nobara 39
+
 ## Uninstall
 
 -   If you need to uninstall, make sure the uninstall script is executable: `chmod +x uninstall.sh`
