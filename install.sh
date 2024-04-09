@@ -12,11 +12,15 @@ user_name=$(who | cut -d ' ' -f 1 | head -1)
 localized_installers=()
 selected_installer=''
 
+echo -e "${Green}${Bold}Searching for installers in user home...${Color_Off}\n"
 c=1
 for installer in $(find /home/$user_name -type f -name "Cisco*Packet*.deb" -o -name "Packet*Tracer*.deb"); do
   localized_installers[$c]=$installer
   ((c++))
 done
+
+clear
+
 if [[ -z "${localized_installers[@]}" ]]; then
   echo -e "\n${Red}${Bold}Packet Tracer installer not found in /home. It must be named like this: $installer_name_1.$Color_Off\n"
   echo -e "You can download the installer from ${Cyan}https://www.netacad.com/portal/resources/packet-tracer${Color_Off} \
@@ -26,9 +30,8 @@ elif [ "${#localized_installers[@]}" -eq 1 ]; then
   selected_installer="${localized_installers[1]}"
 else
  
-  echo -e "${Red}${Bold}Press CTRL + C to cancel installation.${Color_Off}"
-  echo -e "\nThe Packet Tracer installer was found at:"
-  echo -e "${Green}${Bold}$path_to_pt${Color_Off}\n"
+  echo -e "${Red}${Bold}Press CTRL + C to cancel installation.${Color_Off}\n"
+  echo -e "${Cyan}$((c-1)) installers of Cisco Packet Tracer was founded:${Color_Off}\n"
 
   PS3="Select a installer to use: "
 
@@ -41,7 +44,6 @@ fi
 
 echo -e "\n${Bold}Selected installer: ${Red}${Bold}$selected_installer ${Color_Off}\n"
 sleep 3
-
 
 echo "Removing old version of Packet Tracer from /opt/pt"
 sudo bash ./uninstall.sh
