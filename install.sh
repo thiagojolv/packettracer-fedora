@@ -31,7 +31,7 @@ elif [ "${#localized_installers[@]}" -eq 1 ]; then
 else
  
   echo -e "${Red}${Bold}Press CTRL + C to cancel installation.${Color_Off}\n"
-  echo -e "${Cyan}$((c-1)) installers of Cisco Packet Tracer was founded:${Color_Off}\n"
+  echo -e "${Cyan}${Bold}$((c-1)) installers of Cisco Packet Tracer was founded:${Color_Off}\n"
 
   PS3="Select a installer to use: "
 
