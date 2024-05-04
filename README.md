@@ -13,10 +13,9 @@ Follow these steps to easily install:
 
 ## Supported Fedora release
 
-- [x] Fedora 36
-- [x] Fedora 37
 - [x] Fedora 38
 - [x] Fedora 39
+- [x] Fedora 40
 
 ## Supported other releases
 - [X] Nobara 39
