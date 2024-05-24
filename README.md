@@ -13,7 +13,7 @@ Follow these steps to easily install:
 
 ## Supported Fedora release
 
-- [x] Fedora 38
+- [x] Fedora 38 ([F38 is End of Life](https://discussion.fedoraproject.org/t/f38-is-end-of-life/117727))
 - [x] Fedora 39
 - [x] Fedora 40
 
