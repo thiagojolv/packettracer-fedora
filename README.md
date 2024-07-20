@@ -6,10 +6,15 @@ Easily install Cisco Packet Tracer latest version on Fedora. This installation s
 
 Follow these steps to easily install:
 
--   Download the Packet Tracer installer from [Cisco's download page](https://www.netacad.com/portal/node/488) and save it in any directory on `/home` using the default filename.
+-   Download the Packet Tracer installer from [Cisco's download page](https://www.netacad.com/portal/resources/packet-tracer) and save it in any directory on `/home` using the default filename.
 -   Clone this repo to your system
--   `cd` into the cloned repo and make the install script executable: `chmod +x install.sh`
--   Run `bash install.sh` **or** `sudo bash install.sh` and relax. If you not use `sudo`, you can receive no permission alerts when the script looks for installers on you HOME. Only ignore.
+-   `cd` into the cloned repo and make the install script executable: `chmod +x setup.sh`
+-   Run `bash setup.sh` **or** `sudo bash setup.sh` and relax. If you not use `sudo`, you can receive no permission alerts when the script looks for installers on you HOME. Only ignore.
+
+Now, the script accepts command line options:
+- `-d` or `--directory` allows you to specify a path to the installer. This can turn the script more fast preventing to makes big searchs in the entire user home directory;
+- `-h` will show help about the script;
+- `--uninstall` uninstall installed Cisco Packet Tracer.
 
 ## Supported Fedora release
 
@@ -19,10 +24,5 @@ Follow these steps to easily install:
 
 ## Supported other releases
 - [X] Nobara 39
-
-## Uninstall
-
--   If you need to uninstall, make sure the uninstall script is executable: `chmod +x uninstall.sh`
--   Run `sudo bash uninstall.sh`
 
 _If you try this script in another Fedora release, please report any problem or success case._
