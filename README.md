@@ -1,5 +1,7 @@
 # Cisco Packet Tracer latest version on Fedora
 
+[Watch this script in action](https://youtu.be/iOiwRt_P95Y)
+
 Easily install Cisco Packet Tracer latest version on Fedora. This installation script automatically detects a Cisco Packet Tracer `.deb` in any directory on user home.
 
 ## Install
