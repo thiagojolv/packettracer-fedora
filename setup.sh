@@ -56,7 +56,7 @@ install () {
     sleep 3
 
     echo "Removing old version of Packet Tracer from /opt/pt"
-    sudo bash ./uninstall.sh
+    uninstall
 
     echo "Installing dependencies"
     sudo dnf -y install binutils qt5-qt{multimedia,webengine,networkauth,websockets,webchannel,script,location,svg,speech}
@@ -89,11 +89,11 @@ uninstall () {
       sudo rm -f /usr/local/bin/packettracer
     fi
     echo "Cisco Packet Tracer was uninstalled."
-    exit 0
+    sleep 3
 }
 
 case "$1" in
-    -h)
+    -h | --help)
         echo "$USAGE_MESSAGE"
         exit 0
     ;;
@@ -102,6 +102,7 @@ case "$1" in
         installer_search_path="$2"
         echo -e "A directory was especified for search the installer: ${Bold}$installer_search_path${Color_Off}"
         sleep 3
+        install
     ;;
 
     --uninstall)
@@ -110,4 +111,6 @@ case "$1" in
 
 esac
 
-install
+if [ "$1" = "" ]
+then install
+fi
