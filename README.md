@@ -26,5 +26,6 @@ Now, the script accepts command line options:
 
 ## Supported other releases
 - [X] Nobara 39
+- [X] Nobara 40
 
 _If you try this script in another Fedora release, please report any problem or success case._
